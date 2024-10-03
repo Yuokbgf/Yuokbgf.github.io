@@ -11,7 +11,7 @@ const games = {
     O: 'games/game6.html'
 
 const games = {
-    S: 'games/game1.html',
+    S: 'games/game8.html',
 };
 
 const displayWord = document.getElementById('displayWord');
