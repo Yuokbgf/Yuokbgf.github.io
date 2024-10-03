@@ -1,1 +1,26 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game 1</title>
+</head>
+<body>
+    <h1>Mini Game 1: Click as Fast as You Can!</h1>
+    <button id="clickButton">Click Me!</button>
+    <p id="score">Score: 0</p>
+
+    <script>
+        let score = 0;
+        const scoreDisplay = document.getElementById('score');
+        const clickButton = document.getElementById('clickButton');
+
+        clickButton.onclick = () => {
+            score++;
+            scoreDisplay.innerText = `Score: ${score}`;
+        };
+    </script>
+</body>
+</html>
+
