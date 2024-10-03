@@ -2,7 +2,7 @@ const animeCharacters = [
     "Naruto", "Sasuke", "Goku", "Luffy", "Eren", "Ichigo", "Gon", "Killua", "Saitama", "Zoro"
 ];
 
-const games = {
+const naruto = {
     N: 'games/game1.html',
     A: 'games/game2.html',
     R: 'games/game3.html',
@@ -10,7 +10,7 @@ const games = {
     T: 'games/game5.html',
     O: 'games/game6.html'
 
-const games = {
+const sasuke = {
     S: 'games/game8.html',
 };
 
