@@ -9,6 +9,9 @@ const games = {
     U: 'games/game4.html',
     T: 'games/game5.html',
     O: 'games/game6.html'
+
+const games = {
+    S: 'games/game1.html',
 };
 
 const displayWord = document.getElementById('displayWord');
