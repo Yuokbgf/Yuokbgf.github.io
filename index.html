@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Character Game</title>
+    <title>PAIN Puzzle Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container" id="mainContainer">
-        <h1 id="displayWord">Pain</h1>
-        <button id="switchButton">Switch</button>
-        <div id="lettersContainer"></div>
+    <div id="auth-container">
+        <h2>Login to Play</h2>
+        <input type="text" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <button onclick="signup()">Sign Up</button>
+        <p id="message"></p>
     </div>
 
-    <!-- Game Modal -->
-    <div id="gameContainer" class="hidden">
-        <iframe id="gameFrame" src="" width="800" height="600"></iframe>
-        <button id="backButton">Back</button>
+    <div class="container">
+        <h1 id="pain">
+            <span class="letter" id="letter-p">P</span>
+            <span class="letter" id="letter-a">A</span>
+            <span class="letter" id="letter-i">I</span>
+            <span class="letter" id="letter-n">N</span>
+        </h1>
+        <div id="password-container">
+            <input type="text" id="password-input" placeholder="Enter Password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
