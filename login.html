@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="auth-form">
         <h2>Login</h2>
-        <input type="text" id="login-email" placeholder="Email">
-        <input type="password" id="login-password" placeholder="Password">
-        <div class="remember-me">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <label>
             <input type="checkbox" id="remember-me"> Remember Me
-        </div>
+        </label>
         <button onclick="login()">Login</button>
-        <p id="login-message"></p>
-        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <p>Don't have an account? <a href="signup.html">Signup here</a></p>
     </div>
 
+    <!-- Script for login functionality -->
     <script src="auth.js"></script>
 </body>
 </html>
