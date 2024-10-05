@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle for P</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="puzzle-container">
+        <h2>Puzzle for P</h2>
+        <p>Solve this puzzle to proceed. (Put the puzzle logic here)</p>
+        <input type="text" id="puzzle-p-answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="puzzle-result"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('puzzle-p-answer').value;
+            if (answer === 'yourCorrectAnswer') {
+                document.getElementById('puzzle-result').innerText = "Correct! The code is: P1234";
+            } else {
+                document.getElementById('puzzle-result').innerText = "Wrong answer, try again!";
+            }
+        }
+    </script>
+</body>
+</html>
