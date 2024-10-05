@@ -3,40 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAIN - Homepage</title>
+    <title>PAIN Puzzle Game</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <!-- Floating interactive elements -->
-        <div class="floating-element" onclick="playEnjoy()">Click me!</div>
-        <div class="floating-element" onclick="playEnjoy()">Click me!</div>
-        <div class="floating-element" onclick="playEnjoy()">Click me!</div>
+    <!-- Fire opening animation placeholder -->
+    <div id="fire-animation"></div>
 
-        <!-- PAIN letters -->
-        <div class="pain-container">
-            <a href="puzzle_p.html" class="pain-letter">P</a>
-            <a href="puzzle_a.html" class="pain-letter">A</a>
-            <a href="puzzle_i.html" class="pain-letter">I</a>
-            <a href="puzzle_n.html" class="pain-letter">N</a>
+    <!-- Main content with PAIN letters and navigation to Login/Signup pages -->
+    <div class="container">
+        <h1 id="pain">
+            <a href="puzzle_p.html" class="letter nav-link" id="letter-p">P</a>
+            <a href="puzzle_a.html" class="letter nav-link" id="letter-a">A</a>
+            <a href="puzzle_i.html" class="letter nav-link" id="letter-i">I</a>
+            <a href="puzzle_n.html" class="letter nav-link" id="letter-n">N</a>
+        </h1>
+
+        <!-- Links to login and signup pages -->
+        <div class="auth-links">
+            <a href="login.html" class="nav-link">Login</a> | 
+            <a href="signup.html" class="nav-link">Signup</a>
         </div>
+
+        <!-- Floating interactive elements -->
+        <div class="floating-element" id="float1"></div>
+        <div class="floating-element" id="float2"></div>
+        <div class="floating-element" id="float3"></div>
     </div>
 
-    <script>
-        function playEnjoy() {
-            const audio = new Audio('assets/enjoy.mp3');
-            audio.play();
-        }
-
-        // Handle the floating elements disappearing after 3 seconds
-        document.querySelectorAll('.floating-element').forEach(element => {
-            element.addEventListener('click', () => {
-                setTimeout(() => {
-                    element.style.display = 'none';
-                }, 3000); // Disappear after 3 seconds
-            });
-        });
-    </script>
+    <!-- Fire animation and floating elements script -->
+    <script src="main.js"></script>
 </body>
 </html>
