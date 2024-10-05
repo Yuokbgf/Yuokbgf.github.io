@@ -1,42 +1,45 @@
-// Simulated user data (replace with a real backend for deployment)
-const users = {
-    'test@example.com': 'password123'
+// Check if user is logged in
+window.onload = function() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    
+    // If user is not logged in, redirect to login page
+    if (!loggedInUser) {
+        window.location.href = 'login.html';
+    } else {
+        // Show puzzle if user is logged in
+        document.getElementById('puzzle-container').style.display = 'block';
+    }
 };
 
+// Login function
 function login() {
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    const rememberMe = document.getElementById('remember-me').checked;
 
-    if (users[email] && users[email] === password) {
-        document.getElementById('login-message').innerText = "Login successful!";
-        if (rememberMe) {
-            localStorage.setItem('user', email); // Store user for auto-login
-        }
-        setTimeout(() => {
-            window.location.href = 'index.html';  // Redirect after login
-        }, 1000);
+    // For simplicity, using hardcoded email and password (replace with real validation)
+    const correctEmail = "test@example.com";
+    const correctPassword = "password123";
+
+    if (email === correctEmail && password === correctPassword) {
+        // Save login state
+        localStorage.setItem('loggedInUser', email);
+        alert("Login successful!");
+        window.location.href = 'index.html';  // Redirect to main page after login
     } else {
-        document.getElementById('login-message').innerText = "Invalid email or password!";
+        alert("Invalid email or password");
     }
 }
 
+// Signup function
 function signup() {
     const email = document.getElementById('signup-email').value;
     const password = document.getElementById('signup-password').value;
 
-    if (!users[email]) {
-        users[email] = password;
-        document.getElementById('signup-message').innerText = "Signup successful! Please log in.";
+    // Basic validation to simulate signup process (add server-side validation here)
+    if (email && password) {
+        alert("Signup successful! You can now log in.");
+        window.location.href = 'login.html';  // Redirect to login page after signup
     } else {
-        document.getElementById('signup-message').innerText = "User already exists!";
+        alert("Please fill in both fields.");
     }
 }
-
-// Auto-login if "Remember Me" is checked
-window.onload = () => {
-    const user = localStorage.getItem('user');
-    if (user) {
-        window.location.href = 'index.html';  // Redirect to home if already logged in
-    }
-};
