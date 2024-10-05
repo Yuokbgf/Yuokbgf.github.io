@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAIN Puzzle Game</title>
+    <title>PAIN - Homepage</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <div id="auth-container">
-        <h2>Login to Play</h2>
-        <input type="text" id="email" placeholder="Email">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Login</button>
-        <button onclick="signup()">Sign Up</button>
-        <p id="message"></p>
-    </div>
-
     <div class="container">
-        <h1 id="pain">
-            <span class="letter" id="letter-p">P</span>
-            <span class="letter" id="letter-a">A</span>
-            <span class="letter" id="letter-i">I</span>
-            <span class="letter" id="letter-n">N</span>
-        </h1>
-        <div id="password-container">
-            <input type="text" id="password-input" placeholder="Enter Password">
-            <button onclick="checkPassword()">Submit</button>
+        <!-- Floating interactive elements -->
+        <div class="floating-element" onclick="playEnjoy()">Click me!</div>
+        <div class="floating-element" onclick="playEnjoy()">Click me!</div>
+        <div class="floating-element" onclick="playEnjoy()">Click me!</div>
+
+        <!-- PAIN letters -->
+        <div class="pain-container">
+            <a href="puzzle_p.html" class="pain-letter">P</a>
+            <a href="puzzle_a.html" class="pain-letter">A</a>
+            <a href="puzzle_i.html" class="pain-letter">I</a>
+            <a href="puzzle_n.html" class="pain-letter">N</a>
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script>
+        function playEnjoy() {
+            const audio = new Audio('assets/enjoy.mp3');
+            audio.play();
+        }
+
+        // Handle the floating elements disappearing after 3 seconds
+        document.querySelectorAll('.floating-element').forEach(element => {
+            element.addEventListener('click', () => {
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 3000); // Disappear after 3 seconds
+            });
+        });
+    </script>
 </body>
 </html>
