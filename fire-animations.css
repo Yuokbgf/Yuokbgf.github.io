@@ -1,0 +1,18 @@
+/* Fire opening animation for page transitions */
+@keyframes fire-open {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.page-transition {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('fire-animation.gif') center center no-repeat;
+    background-size: cover;
+    animation: fire-open 3s ease-out forwards;
+    z-index: 9999;
+}
